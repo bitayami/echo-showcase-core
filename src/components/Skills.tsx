@@ -41,7 +41,7 @@ export const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={category.title} 
-              className="card-glow border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 animate-fade-in"
+              className="card-glow border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 animate-fade-in hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>

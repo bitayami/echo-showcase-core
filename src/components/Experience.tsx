@@ -58,8 +58,8 @@ export const Experience = () => {
           {experiences.map((exp, index) => (
             <Card
               key={exp.title}
-              className="card-glow border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`card-glow border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 ${index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <CardHeader>
                 <div className="flex items-start gap-4">
