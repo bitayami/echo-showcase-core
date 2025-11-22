@@ -5,17 +5,17 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "Test Management System",
-    description: "Comprehensive testing and management platform built with modern web technologies.",
+    title: "Logistics Project",
+    description: "Comprehensive logistics and management platform built with modern React technologies.",
     url: "https://test.shalx.asia",
-    tech: ["C#.NET", "Bootstrap", "DevExtreme", "jQuery", "Axios"],
+    tech: ["React JS", "Tailwind CSS", "React MUI"],
     type: "Team Project",
   },
   {
     title: "CRM Application",
     description: "Customer Relationship Management system for Aggrandize Ventures with advanced features.",
     url: "https://crm.aggrandizeventure.com",
-    tech: ["C#.NET", "MVC", "Bootstrap", "SQL Server"],
+    tech: ["React JS", "Tailwind CSS", "React MUI"],
     type: "Team Project",
   },
   {

@@ -55,12 +55,14 @@ export const Hero = () => {
           </div>
 
           <div className="flex justify-center animate-fade-in-up">
-            <div className="relative">
+            <div className="relative float-animation">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-glow-pulse" />
+              <div className="absolute -top-10 -left-10 w-24 h-24 bg-glow-secondary/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-glow/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
               <img 
                 src={heroCharacter} 
                 alt="Yamini K - Web Developer" 
-                className="relative z-10 w-full max-w-md rounded-2xl"
+                className="relative z-10 w-full max-w-md rounded-2xl shadow-2xl"
               />
             </div>
           </div>
