@@ -5,7 +5,7 @@ const experiences = [
   {
     title: "Junior Executive",
     company: "Aggrandize Ventures Pvt. Ltd",
-    period: "2022 - Present",
+    period: "2022 - 2026",
     type: "Full-time",
     responsibilities: [
       "Built user-friendly web applications using ReactJS",

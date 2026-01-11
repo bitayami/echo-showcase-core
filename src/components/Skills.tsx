@@ -5,12 +5,12 @@ const skillCategories = [
   {
     title: "Frontend Development",
     icon: Layout,
-    skills: ["React JS", "Material-UI", "Tailwind CSS", "HTML5", "CSS3", "JavaScript", "Redux Toolkit"],
+    skills: ["React JS", "Material-UI", "Tailwind CSS", "HTML5", "CSS3", "JavaScript", "Redux Toolkit", "React Hook Forms"],
   },
   {
     title: "Backend Development",
     icon: Server,
-    skills: ["C#", ".NET Core", ".NET Framework", "MVC", "Azure Services", "Google Cloud"],
+    skills: ["C#", ".NET Core", ".NET Framework", "MVC", "Azure Services", "Google Cloud", "Agile methodologies"],
   },
   {
     title: "Database & Tools",
@@ -20,7 +20,7 @@ const skillCategories = [
   {
     title: "Other Skills",
     icon: Code2,
-    skills: ["Python Basics", "React Hook Forms", "AD Integration", "Email Integration"],
+    skills: ["AD Integration", "Email Integration","Python Basics", "Figma", "Power BI" ],
   },
 ];
 

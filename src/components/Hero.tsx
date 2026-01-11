@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Download, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroCharacter from "@/assets/hero-character.jpg";
 
@@ -16,38 +16,64 @@ export const Hero = () => {
                 Full Stack Developer
               </p>
             </div>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Highly motivated IT Developer with 3+ years of experience in Front End and .NET Development. 
-              Passionate about building user-friendly web applications and collaborating with teams to deliver exceptional solutions.
+              Highly motivated IT Developer with 3+ years of experience in Front
+              End and .NET Development. Passionate about building user-friendly
+              web applications and collaborating with teams to deliver
+              exceptional solutions.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-primary hover:bg-primary/90 glow-border"
-                onClick={() => window.open('https://github.com/bitayami', '_blank')}
+                onClick={() =>
+                  window.open("https://github.com/bitayami", "_blank")
+                }
               >
                 <Github className="mr-2 h-5 w-5" />
                 GitHub
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                onClick={() => window.open('https://www.linkedin.com/in/yamini-k-4567a724', '_blank')}
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/yamini-k-4567a724",
+                    "_blank"
+                  )
+                }
               >
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
               </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                onClick={() =>
+                  window.open("https://resume-ten-rose.vercel.app/", "_blank")
+                }
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Resume
+              </Button>
             </div>
 
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <a href="mailto:nkyamini@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a
+                href="mailto:nkyamini@gmail.com"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
                 <Mail className="h-4 w-4" />
                 nkyamini@gmail.com
               </a>
-              <a href="tel:9840147578" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a
+                href="tel:9840147578"
+                className="flex items-center gap-2 hover:text-primary transition-colors"
+              >
                 <Phone className="h-4 w-4" />
                 9840147578
               </a>
@@ -58,11 +84,14 @@ export const Hero = () => {
             <div className="relative float-animation">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-glow-pulse" />
               <div className="absolute -top-10 -left-10 w-24 h-24 bg-glow-secondary/20 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-glow/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
+              <div
+                className="absolute -bottom-10 -right-10 w-32 h-32 bg-glow/20 rounded-full blur-2xl animate-pulse"
+                style={{ animationDelay: "1s" }}
+              />
               <div className="relative z-10 bg-white rounded-2xl p-6 shadow-2xl">
-                <img 
-                  src={heroCharacter} 
-                  alt="Yamini K - Web Developer" 
+                <img
+                  src={heroCharacter}
+                  alt="Yamini K - Web Developer"
                   className="w-full max-w-md rounded-xl"
                 />
               </div>

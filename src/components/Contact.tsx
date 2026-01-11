@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -16,14 +17,46 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+
+    // 2. Prepare the parameters for your EmailJS template
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    // 3. Send the email
+    emailjs
+      .send(
+        "service_52ue1o7",
+        "template_h4d9k56",
+        templateParams,
+        "u17gbYKJh81y9_X2y"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          toast({
+            title: "Message Sent!",
+            description:
+              "Thank you for reaching out. I'll get back to you soon.",
+          });
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          toast({
+            title: "Error",
+            description: "Something went wrong. Please try again later.",
+            variant: "destructive",
+          });
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -45,9 +78,12 @@ export const Contact = () => {
             <Card className="card-glow border-border/50 bg-card/50 backdrop-blur-sm p-6">
               <CardContent className="space-y-6 p-0">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Contact Information</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">
+                    Contact Information
+                  </h3>
                   <p className="text-muted-foreground mb-6">
-                    Feel free to reach out through any of these channels. I'm always open to discussing new projects and opportunities.
+                    Feel free to reach out through any of these channels. I'm
+                    always open to discussing new projects and opportunities.
                   </p>
                 </div>
 
@@ -118,7 +154,10 @@ export const Contact = () => {
               <CardContent className="p-0">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Your Name
                     </label>
                     <Input
@@ -132,9 +171,11 @@ export const Contact = () => {
                       placeholder="John Doe"
                     />
                   </div>
-
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Your Email
                     </label>
                     <Input
@@ -148,9 +189,11 @@ export const Contact = () => {
                       placeholder="john@example.com"
                     />
                   </div>
-
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Your Message
                     </label>
                     <Textarea
@@ -163,7 +206,6 @@ export const Contact = () => {
                       placeholder="Tell me about your project..."
                     />
                   </div>
-
                   <Button
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90 glow-border"
