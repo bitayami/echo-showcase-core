@@ -18,14 +18,12 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 2. Prepare the parameters for your EmailJS template
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
     };
 
-    // 3. Send the email
     emailjs
       .send(
         "service_52ue1o7",
